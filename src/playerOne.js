@@ -4,4 +4,4 @@ class Player  {
         this.choice = choice;
 }
 }
-module.exports = Player;
+export default Player;
