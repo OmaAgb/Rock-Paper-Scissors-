@@ -1,7 +1,7 @@
 class Player  {
-    constructor(name,playerChoice) {
+    constructor(name,choice) {
         this.name = name;
-        this.playerChoice = playerChoice;
+        this.choice = choice;
 }
 }
 module.exports = Player;

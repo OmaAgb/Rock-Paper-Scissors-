@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 
 import { router as start} from './routes/gameStart.js';
-// import { router as choice} from './routes/gameChoice.js';
+import { router as choice} from './routes/gameChoice.js';
 // import { router as score} from './routes/gameScore.js';
 
 dotenv.config({
@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 app.use('/', start);
-// app.use('/choice', choice); 
+app.use('/choice', choice); 
 // app.use('/score', score);
 
 
