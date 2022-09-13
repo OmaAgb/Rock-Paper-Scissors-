@@ -3,7 +3,7 @@ import express from "express";
 
 import { router as start } from './routes/gameStart.js';
 import { router as option } from './routes/gameOption.js';
-// import { router as score} from './routes/gameScore.js';
+import { router as score} from './routes/gameScore.js';
 
 dotenv.config({
     path: `.env.${process.env.NODE_ENV}`
@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use('/', start);
 app.use('/option', option);
-// app.use('/score', score);
+app.use('/score', score);
 
 
 const server = app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT}`));

@@ -2,20 +2,34 @@
 //paper beats rock
 //scissors beats paper
 
-import Player from "./playerOne";
-import Computer from "./playerTwo";
+import Player from "./playerOne.js";
+import Computer from "./playerTwo.js";
+class Rules{
 
-person = new Player();
-bot = new Computer();
+    person;
+    bot = new Computer();
+    computerChoice = this.bot.computer()
 
-if (person.choice === "rock" && bot.computer() === "scissors")
-    return "You win!";
+    constructor(name, choice) {
+        this.person = new Player(name, choice);
+    }
 
-if (person.choice === "paper" && bot.computer() === "rock")
-    return "You win!";
+    results() {
+        if (this.person.choice === "rock" && this.computerChoice=== "scissors")
+            return "You win!";
 
-if (person.choice === "scissor" && bot.computer() === "paper")
-    return "You win!";
+        if (this.person.choice === "paper" && this.computerChoice === "rock")
+            return "You win!";
 
-if (person.choice === bot.computer())
-    return "It's a tie!";
+        if (this.person.choice === "scissor" && this.computerChoice === "paper")
+            return "You win!";
+
+        if (this.person.choice === this.computerChoice)
+            return "It's a tie!";
+    }
+  
+// add computer ifs  x3 - computer wins-
+}
+
+
+export default Rules
