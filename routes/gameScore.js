@@ -16,12 +16,8 @@ router.get('/', (req, res) => {
 })
 
 router.post("/", (req, res) => {
-    req.app.locals.choice = req.body.choice //string value
-    rules = new Rules(req.app.locals.name, req.app.locals.choice)
-    result = rules.results()
-
-    res.redirect('/score') // to render the next page
+    req.app.locals.choice = req.body.choice;
+    rules = new Rules(req.app.locals.name, req.app.locals.choice);
+    result = rules.results();
+    res.redirect('/score');
 })
-
-// create instance of player and computer
-// apply rules

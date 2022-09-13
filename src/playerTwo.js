@@ -1,12 +1,9 @@
 class Computer {
 
-    options = ["rock","paper","scissor"]; 
+    options = ["rock","paper","scissors"]; 
 
     computer() {
         const random = Math.floor(Math.random() * this.options.length);
-
-        // math floor google
-
         return this.options[random]
     }
 }
